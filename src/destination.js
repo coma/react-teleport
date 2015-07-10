@@ -32,19 +32,26 @@ module.exports = React.createClass({
             child: null
         };
     },
+    setChild: function (child) {
+
+        if (!this.unmounted) {
+
+            this.setState({
+                child: child
+            });
+        }
+    },
     add     : function (child) {
 
-        this.setState({
-            child: child
-        });
+        this.setChild(child);
     },
-    remove     : function () {
+    remove  : function () {
 
-        this.setState({
-            child: null
-        });
+        this.setChild(null);
     },
     componentWillMount  : function () {
+
+        this.unmounted = false;
 
         if (destinations.hasOwnProperty(this.props.name)) {
 
@@ -54,6 +61,8 @@ module.exports = React.createClass({
         destinations[this.props.name] = this;
     },
     componentWillUnmount: function () {
+
+        this.unmounted = true;
 
         delete destinations[this.props.name];
     },

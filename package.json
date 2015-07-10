@@ -4,14 +4,15 @@
     "homepage"       : "https://github.com/coma/react-teleport",
     "repository"     : "https://github.com/coma/react-teleport",
     "main"           : "./src/index.js",
-    "version"        : "0.1.0",
+    "version"        : "0.1.1",
     "license"        : "MIT",
     "private"        : false,
     "authors"        : [
         "Eduardo García Sanz <eduardo@comakai.com>"
     ],
     "keywords"       : [
-        "react"
+        "react",
+        "reactjs"
     ],
     "dependencies"   : {
         "react": "0.13"
